@@ -1,4 +1,4 @@
-name: Build_Armbian_Customize_Board
+name: Build_Armbian_Customize_Board_FMX1
   
 on:  
   workflow_dispatch:  
@@ -6,7 +6,7 @@ on:
       BOARD:  
         description: 'Board type'  
         required: true 
-        default: 'tpm312'
+        default: 'fmx1-pro'
         type: choice
         options:
           - fine3399
