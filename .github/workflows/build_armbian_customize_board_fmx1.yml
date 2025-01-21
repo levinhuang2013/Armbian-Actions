@@ -161,8 +161,8 @@ jobs:
             ### Armbian Image Information  
             - Release: ${{ github.event.inputs.RELEASE }}    
             - Version: ${{ env.VERSION }}  
-            - Board Model: ${{ env.BOARD_MODEL }}  
-            - Kernel Version: ${{ env.KERNEL_VERSION }}  
+            - Board: ${{ env.BOARD_MODEL }}  
+            - Kernel: ${{ env.KERNEL_VERSION }}  
             ### Armbian Image Verification  
             - sha256sum   
           draft: false  
