@@ -6,11 +6,11 @@ on:
       BOARD:
         description: 'Board type'
         required: true
-        default: 'fmx1-pro'
+        default: 'rk3399-fmx1'
         type: choice
         options:
           - fine3399
-          - fmx1-pro
+          - rk3399-fmx1
           - r08
           - rock960
           - sg2710
