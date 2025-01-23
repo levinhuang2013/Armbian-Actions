@@ -34,9 +34,9 @@ DISABLE_UPDATE $(echo "${PKG_LIST}" | grep "^linux-dtb-")
 DISABLE_UPDATE $(echo "${PKG_LIST}" | grep "^linux-u-boot")
 
 # 替换Armbian-unofficial成Armbian OS
-sed -i 's/Armbian-unofficial/ROCKCHIP RK3399/g' /etc/armbian-image-release 
+sed -i 's/Armbian-unofficial/RK3399 FMX1/g' /etc/armbian-image-release 
 # sed -i 's/24.8.1-trunk/24.8.1/g' /etc/armbian-image-release
-sed -i 's/Armbian-unofficial/ROCKCHIP RK3399/g' /etc/armbian-release
+sed -i 's/Armbian-unofficial/RK3399 FMX1/g' /etc/armbian-release
 # sed -i 's/24.8.1-trunk/24.8.1/g' /etc/armbian-release
 
 Main() {
