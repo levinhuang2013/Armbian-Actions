@@ -52,8 +52,8 @@ on:
         required: false
         type: choice
         options:
-          - yes
-          - no
+          - 'yes'
+          - 'no'
       COMPRESS_OUTPUTIMAGE:
         description: 'Compress output image'
         default: 'sha,xz'
@@ -65,8 +65,8 @@ on:
         required: false
         type: choice
         options:
-          - yes
-          - no
+          - 'yes'
+          - 'no'
 env:
   TZ: Asia/Shanghai
 
