@@ -1,4 +1,4 @@
-name: Build_Armbian_Customize_Board_FMX1
+name: Build_Armbian_Customize_Board_RK3399-FMX1
 
 on:
   workflow_dispatch:
