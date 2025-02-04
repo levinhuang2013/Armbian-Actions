@@ -66,6 +66,23 @@ on:
         options:
           - 'yes'
           - 'no'
+      PREFER_DOCKER:
+        description: 'Use Docker build'
+        default: 'no'
+        required: false
+        type: choice
+        options:
+          - 'yes'
+          - 'no'
+      DOCKER_ARMBIAN_BASE_IMAGE:
+        description: 'Docker IMAGE'
+        default: 'ubuntu:jammy'
+        required: false
+        type: choice
+        options:
+          - 'ubuntu:jammy'
+          - 'ubuntu:noble'
+          - 'debian:bookworm'
 env:
   TZ: Asia/Shanghai
 
@@ -113,7 +130,8 @@ jobs:
       - name: Compile Armbian [ ${{ inputs.BOARD }} ${{ inputs.RELEASE }} ]
         run: |
           cd /mnt/workdir/build/
-          ./compile.sh BOARD=${{ inputs.BOARD }} RELEASE=${{ inputs.RELEASE }} BRANCH=${{ inputs.BRANCH }} BUILD_MINIMAL=no BUILD_DESKTOP=${{ inputs.BUILD_DESKTOP }} KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=${{ inputs.COMPRESS_OUTPUTIMAGE }} BOOT_LOGO=${{ inputs.BOOT_LOGO }} HOST=armbian EXPERT=yes
+          ./compile.sh BOARD=${{ inputs.BOARD }} RELEASE=${{ inputs.RELEASE }} BRANCH=${{ inputs.BRANCH }} BUILD_MINIMAL=no BUILD_DESKTOP=${{ inputs.BUILD_DESKTOP }} KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=${{ inputs.COMPRESS_OUTPUTIMAGE }} \
+          BOOT_LOGO=${{ inputs.BOOT_LOGO }} HOST=armbian EXPERT=yes PREFER_DOCKER=${{ inputs.PREFER_DOCKER }} DOCKER_ARMBIAN_BASE_IMAGE=${{ inputs.DOCKER_ARMBIAN_BASE_IMAGE }}
 
       - name: Set current year and month
         run: |
