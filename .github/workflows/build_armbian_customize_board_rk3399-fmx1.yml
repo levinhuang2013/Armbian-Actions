@@ -123,6 +123,7 @@ jobs:
           cd build/
           # 复制 config 和 userpatches 目录文件
           cp -rf ${{ github.workspace }}/addboard/config/* config
+          cp -rf ${{ github.workspace }}/addboard/packages/* packages
           mkdir -p userpatches
           cp -rf ${{ github.workspace }}/addboard/userpatches/* userpatches
           ls -la
