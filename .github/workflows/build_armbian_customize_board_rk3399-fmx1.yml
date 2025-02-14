@@ -40,13 +40,13 @@ on:
           - bullseye
       Version:
         description: 'Armbian Version'
-        default: 'main'
+        default: 'v25.02'
         required: false
         type: choice
         options:
           - main
+          - v25.02
           - v24.11
-          - v24.08
       BUILD_DESKTOP:
         description: 'Build desktop environment'
         default: 'no'
@@ -124,8 +124,7 @@ jobs:
       - name: Compile Armbian [ ${{ inputs.BOARD }} ${{ inputs.RELEASE }} ${{ inputs.Version }} ]
         run: |
           cd /mnt/workdir/build/
-          ./compile.sh build BOARD=${{ inputs.BOARD }} RELEASE=${{ inputs.RELEASE }} BRANCH=${{ inputs.BRANCH }} BUILD_MINIMAL=no BUILD_DESKTOP=${{ inputs.BUILD_DESKTOP }} KERNEL_CONFIGURE=no \
-          COMPRESS_OUTPUTIMAGE=${{ inputs.COMPRESS_OUTPUTIMAGE }} HOST=armbian EXPERT=yes PREFER_DOCKER=${{ inputs.PREFER_DOCKER }} DOCKER_ARMBIAN_BASE_IMAGE=${{ inputs.DOCKER_ARMBIAN_BASE_IMAGE }}
+          ./compile.sh build BOARD=${{ inputs.BOARD }} RELEASE=${{ inputs.RELEASE }} BRANCH=${{ inputs.BRANCH }} BUILD_MINIMAL=no BUILD_DESKTOP=${{ inputs.BUILD_DESKTOP }} KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=${{ inputs.COMPRESS_OUTPUTIMAGE }} HOST=armbian EXPERT=yes
           ls -la
           cd output/images
           ls -la
