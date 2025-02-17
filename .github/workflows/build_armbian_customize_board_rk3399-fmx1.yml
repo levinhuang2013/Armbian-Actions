@@ -9,15 +9,7 @@ on:
         default: 'fmx1'
         type: choice
         options:
-          - fine3399
           - fmx1
-          - r08
-          - rock960
-          - sg2710
-          - tpm312
-          - tb-ls3399
-          - xiaobao-nas
-          - zysj
       BRANCH:
         description: 'Armbian branch'
         default: 'current'
